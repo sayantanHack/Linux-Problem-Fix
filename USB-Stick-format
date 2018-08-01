@@ -1,0 +1,18 @@
+Formating USB partition & make a single Partition 
+
+ Open terminal . Type the following -
+  
+  Sudo su (for geting the root previlage )
+  'fdisk -l' or 'lsblk'  (It will show all your storage devices conected to your computer. like sda , sdb, sdc etc...)
+   umount device location  (This will unmount the specific device ; for ex - umount /dev/sdb ) 
+   parted /dev/sdb  (CLI version of gparted specify the drive linke /dev/sdb) Then a (parted) screen will apear
+   mktable msdos   (It will make the partition table in this case we selected msdos means mbr partition table . In case of Linux you can also use gpt)   
+   Type y for Yes; n for No
+   mkpart primary 0% 100%  (single primary partition selected 0 to 100 %)
+   quit  (all done let`s out of it)
+   
+Now Format the USB device :
+  mkfs.msdos -F 32 /dev/sdb1 
+ ( The format is done fat 32 & the location in the usb drive. )
+ The format can be done in any type of system like NTFS , ext3 , ext4 etc.
+   
