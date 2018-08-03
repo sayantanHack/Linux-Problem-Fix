@@ -12,7 +12,7 @@ Formating USB partition & make a single Partition
    quit  (all done let`s out of it)
    
 Now Format the USB device :
-  mkfs.msdos -F 32 /dev/sdb1 
+  mkfs.msdos -F 32 /dev/sdb1 (or) mkfs.vfat /dev/sdb
  ( The format is done fat 32 & the location in the usb drive. )
  The format can be done in any type of system like NTFS , ext3 , ext4 etc.
    
